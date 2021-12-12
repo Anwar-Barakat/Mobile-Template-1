@@ -1,0 +1,1303 @@
+//--------------------------
+// Global Css
+//--------------------------
+$white-color: #fff;
+$main-color:#17a2b8;
+$color-1: #e91e63;
+$color-2: #f5ae10;
+$color-3: #09d69c;
+$color-4: #2b2c2f;
+$black-900:#000000;
+$black-400:#555555;
+$black-100:#f5f5f5;
+$black-000:#ffffff;
+$main-size: 17px;
+$shadow-300:0 5px 15px rgba(0, 0, 0, 0.3);
+$shadow-100:0 5px 15px rgba(0, 0, 0, 0.1);
+* {
+    margin: 0;
+    padding: 0;
+    outline: none!important;
+}
+
+body.dark {
+    background-color: $color-4;
+    $black-100: $color-4;
+    $black-000: $color-4;
+    $shadow-100: $shadow-300;
+    $black-900: white;
+    $black-400: #bbb;
+    $black-100: $black-000;
+    .home {
+        background: #2b2c2f;
+        color: white;
+        &:before {
+            background: #2b2c2f;
+        }
+    }
+    .contact,
+    .testimonial,
+    .team,
+    .fun-facts,
+    .footer {
+        background: #2b2c2f;
+    }
+    .navbar .container .nav-item .nav-link,
+    .home .home-text h2,
+    .how-it-works .how-it-works-item p,
+    .testimonial .testimonial-item p,
+    .pricing .pricing-plan .pricing-header h3,
+    .pricing .pricing-plan .pricing-body ul li,
+    .team .team-item h3,
+    .faq .accordion-item .accordion-header h3,
+    .contact .contact-info h3,
+    .contact .contact-info .contact-info-item h4 {
+        color: #cfc8c8;
+    }
+    .home .home-text p,
+    .team .team-item span,
+    .contact .contact-info .contact-info-item p {
+        color: #6a6565;
+    }
+    .faq .accordion-item .accordion-header:not(.collapsed) h3 {
+        color: #2b2c2f;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn-1 {
+    background-color: $white-color;
+    border-radius: 30px;
+    padding: 8px 15px;
+    border: none;
+    color: $main-color;
+    font-size: $main-size;
+    text-transform: capitalize;
+    transition: all 0.4s ease-in-out;
+    box-shadow: $shadow-300;
+    font-weight: 500;
+    &:focus {
+        box-shadow: $shadow-300;
+    }
+    &:hover {
+        color: $white-color;
+        background: $main-color
+    }
+}
+
+.btn-2 {
+    background-color: $main-color;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    color: $white-color;
+    font-size: $main-size;
+    text-transform: capitalize;
+    transition: all 0.4s ease-in-out;
+    box-shadow: $shadow-300;
+    font-weight: 500;
+    &:focus {
+        box-shadow: $shadow-300;
+    }
+    &:hover {
+        color: $main-color;
+        background: $white-color
+    }
+}
+
+.section-padding {
+    padding: 80px 0
+}
+
+.section-title {
+    margin-bottom: 60px;
+    h2 {
+        font-size: 35px;
+        color: $black-900;
+        font-weight: bold;
+        text-transform: capitalize;
+        text-align: center;
+        margin: 0;
+        span {
+            color: $main-color;
+        }
+    }
+}
+
+@keyframes spin_01 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce_01 {
+    0%,
+    100% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pluse_01 {
+    0% {
+        transform: scale(0.94);
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0px 0px 0px 12px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.94);
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes zoom_01 {
+    0% {
+        transform: scale(0)
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+//--------------------------
+// Global Css
+//--------------------------
+// ***********************************
+// ***********************************
+// ***********************************
+// ***********************************
+// ***********************************
+//--------------------------
+// Global Navbar :
+//--------------------------
+.navbar {
+    background-color: transparent;
+    padding: 10px 0;
+    transition: all 1s ease-in-out;
+    .container {
+        padding: 0px 15px;
+        .navbar-brand {
+            font-size: $main-size + 4;
+            color: $main-color;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .nav-item {
+            margin-left: 20px;
+            .nav-link {
+                color: $black-400;
+                text-transform: capitalize;
+                font-size: $main-size;
+                font-weight: 400;
+                padding: 5px 0;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    height: 1px;
+                    background-color: $black-400;
+                    transition: all 0.5s ease-in-out;
+                    transform: scale(0);
+                }
+                &:hover::before {
+                    transform: scale(1);
+                }
+                &.active::before {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.navbar.navbar-shrink {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+//--------------------------
+// Global Navbar :
+//--------------------------
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+//--------------------------
+// Home Section Start :
+//--------------------------
+.home {
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        background: white;
+        width: 2000px;
+        height: 2000px;
+        border-radius: 50%;
+        background-color: linear-gradient(-45deg, #4481eb, #04befe);
+        top: -10px;
+        right: 48%;
+        transform: translateY(-50%)
+    }
+    position: relative;
+    min-height: 100vh;
+    background-color: $main-color;
+    padding: 150px 0;
+    .home-text {
+        h2 {
+            font-size: 31px;
+            font-weight: 700;
+            color: #5e5a5a;
+            margin: 0 0 20px
+        }
+        p {
+            font-size: $main-size;
+            color: #5e5a5a;
+            line-height: 28px;
+            margin: 0 0;
+            font-weight: 300;
+            width: 80%;
+            margin-top: 10px
+        }
+        .btn-home {
+            margin-top: 40px;
+        }
+        .video-play-btn {
+            margin-left: 30px;
+            font-size: $main-size;
+            animation: pluse_01 2s ease infinite;
+            background-color: $main-color;
+            color: white;
+            i {
+                text-align: center;
+            }
+        }
+    }
+    .home-img {
+        position: relative;
+        .circle {
+            position: absolute;
+            z-index: 1;
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &::before {
+                position: absolute;
+                content: "";
+                height: 60px;
+                width: 60px;
+                background: rgba(255, 255, 255, .3);
+                border-radius: 50%;
+                left: 30px;
+                top: 30px;
+                transform-origin: 170px 170px;
+                animation: spin_01 10s ease-out infinite
+            }
+        }
+        img {
+            max-width: 250px;
+            width: 100%;
+            box-shadow: $shadow-100;
+            border-radius: 30px;
+            animation: bounce_01 6s ease infinite;
+        }
+    }
+}
+
+//--------------------------
+// Home Section End :
+//--------------------------
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//--------------------------
+//  video popup start :
+//--------------------------
+.video-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20000;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.9s ease-in-out;
+    .video-popup-inner {
+        width: 100%;
+        max-width: 900px;
+        position: relative;
+        .video-popup-close {
+            position: absolute;
+            right: 0;
+            top: -30px;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            font-size: $main-size;
+            cursor: pointer;
+            text-align: center;
+            color: $white-color;
+        }
+        .iframe-box {
+            height: 0;
+            overflow: hidden;
+            padding-top: 55%;
+            #player_01 {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        }
+    }
+}
+
+.video-popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+//--------------------------
+//  video popup End :
+//--------------------------
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+//--------------------------
+// Features Section Start :
+//--------------------------
+.features {
+    .features-item {
+        position: relative;
+        z-index: 1;
+        box-shadow: $shadow-100;
+        margin: 15px;
+        padding: 30px;
+        border-radius: 5px;
+        text-align: center;
+        overflow: hidden;
+        &::before,
+        &::after {
+            position: absolute;
+            content: " ";
+            z-index: -1;
+            border-radius: 50%;
+            transition: all .4s ease-in-out;
+            opacity: 0;
+        }
+        &::before {
+            height: 20px;
+            width: 20px;
+            background: $color-1;
+            left: -20px;
+            top: 40%;
+            transition: all .4s ease-in-out;
+        }
+        &::after {
+            height: 30px;
+            width: 30px;
+            background: $color-2;
+            right: -30px;
+            top: 80%;
+            transition: all .4s ease-in-out;
+        }
+        &:hover::before {
+            opacity: 1;
+            left: 20px;
+        }
+        &:hover::after {
+            opacity: 1;
+            right: -5px;
+        }
+        &:hover .icon {
+            color: $white-color;
+            font-size: $main-size + 4;
+        }
+        &:hover .icon::before {
+            left: 0;
+            border-radius: 50%;
+            opacity: 1;
+        }
+        .icon {
+            height: 60px;
+            width: 60px;
+            margin: 0 auto 20px;
+            text-align: center;
+            font-size: $main-size+11;
+            color: $main-color;
+            position: relative;
+            z-index: 1;
+            transition: all .4s ease-in-out;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: $main-color;
+                transition: all .4s ease-in-out;
+                z-index: -1;
+                opacity: 0;
+            }
+            i {
+                line-height: 60px;
+                font-weight: bold;
+            }
+        }
+        h3 {
+            font-size: 24px;
+            margin: 0 0 20px;
+            color: #888;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+        p {
+            font-size: $main-size;
+            line-height: 1.7;
+            font-weight: 300;
+            color: #aaa;
+            margin: 0 0 15px;
+        }
+    }
+}
+
+.owl-carousel {
+    .owl-dots {
+        text-align: center;
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+    button.owl-dot {
+        border-radius: 10px;
+        height: 4px;
+        width: 20px;
+        background: #ddd;
+        display: inline-block;
+        margin: 0 4px;
+        &.active {
+            background: $main-color
+        }
+    }
+}
+
+//--------------------------
+// Features Section Start :
+//--------------------------
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+//--------------------------
+// Fun Section Start:
+//--------------------------
+.fun-facts {
+    background: $black-100;
+    .fun-facts-img {
+        img {
+            max-width: 450px;
+            width: 100%;
+            box-shadow: $shadow-100;
+            border-radius: 30px;
+            animation: bounce_01 6s ease infinite;
+        }
+    }
+    .section-title {
+        margin-bottom: 20px;
+        h2 {
+            text-align: left;
+        }
+    }
+    .fun-facts-text {
+        p {
+            font-size: 15px;
+            color: #aaa;
+            line-height: 1.8;
+            margin: 0 0 15px;
+            font-weight: 300;
+        }
+    }
+}
+
+.fun-fact-item {
+    padding: 34px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: $shadow-100;
+    h3 {
+        font-size: 35px;
+        font-weight: 900;
+        color: $white-color;
+        margin: 0 0 8px;
+        font-family: tahoma;
+    }
+    span {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0;
+        line-height: 25px;
+        display: block;
+        color: #ddd;
+    }
+    &.style-1 {
+        background: $main-color;
+    }
+    &.style-2 {
+        background: $color-1;
+    }
+    &.style-3 {
+        background: $color-2;
+    }
+    &.style-4 {
+        background: $color-3;
+    }
+}
+
+//--------------------------
+// Fun Section End:
+//--------------------------
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//--------------------------
+// ScreenShot Section Start :
+//--------------------------
+.app-screenshots {
+    .screenshot-item {
+        margin: 15px;
+        margin-top: 30px;
+        img {
+            width: 250px;
+            max-width: 100%;
+            display: block;
+            margin: auto;
+        }
+    }
+}
+
+//--------------------------
+// ScreenShot Section End :
+//--------------------------
+// ***********************************
+// ***********************************
+// ***********************************
+// ***********************************
+// ***********************************
+//--------------------------
+// App Download Section Start :
+//--------------------------
+.app-download {
+    background: url('../img/app-download.jpg');
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: $main-color;
+        opacity: .5;
+    }
+    .section-title {
+        h2 {
+            color: $white-color;
+        }
+    }
+    .app-download-item {
+        background: $black-000;
+        padding: 30px;
+        text-align: center;
+        border-radius: 50px;
+        i {
+            font-size: 33px;
+            color: $main-color;
+            display: inline-block;
+        }
+        h3 {
+            font-size: 22px;
+            color: #ddd;
+            margin: 20px 0;
+            font-weight: 500;
+            text-transform: capitalize
+        }
+        p {
+            font-size: $main-size;
+            color: $black-400;
+            margin: 0 0 30px;
+            line-height: 26px
+        }
+    }
+}
+
+//--------------------------
+// App Download Section End :
+//--------------------------
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+//--------------------------
+// How it work Section Start:
+//--------------------------
+.how-it-works {
+    .how-it-works-item {
+        position: relative;
+        z-index: 1;
+        padding: 30px;
+        text-align: center;
+        .step {
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            background: $main-color;
+            font-size: 22px;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 50%;
+            color: $white-color;
+            font-weight: 500;
+            margin: 0 0 15pxs;
+        }
+        h3 {
+            margin: 20px 0;
+            font-size: 21px;
+            font-weight: 500;
+            color: $black-400;
+            text-transform: capitalize;
+        }
+        p {
+            font-size: $main-size;
+            color: #2b2c2f;
+            font-weight: 300;
+            line-height: 25px;
+            width: 92%;
+            margin: 0 auto;
+        }
+        &.line-right::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            left: 50%;
+            top: 60px;
+            background-color: $main-color;
+            z-index: -1;
+        }
+    }
+}
+
+//--------------------------
+// How it work Section End:
+//--------------------------
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//--------------------------
+// Testimonial Section Start:
+//--------------------------
+.testimonial {
+    background-color: $black-100;
+    .testimonial-item {
+        margin: 15px;
+        padding: 30px;
+        box-shadow: $shadow-100;
+        border-radius: 20px;
+        text-align: center;
+        .img-box {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            margin-bottom: 30px;
+            border: 4px solid $main-color;
+            border-radius: 50%;
+            position: relative;
+            img {
+                border-radius: 50%;
+                width: 100%;
+            }
+            i {
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                background-color: $main-color;
+                color: $white-color;
+                border-radius: 50%;
+                line-height: 30px;
+                text-align: center;
+                left: calc(100% - 15px);
+                top: calc(50% - 15px);
+            }
+        }
+        p {
+            font-size: $main-size +1;
+            margin: 0 0 20px;
+            color: $black-400;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        h3 {
+            font-size: $main-size + 5;
+            margin: 0 0 5px;
+            color: $black-900;
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+        span {
+            display: block;
+            font-size: $main-size +3;
+            color: $black-400;
+            font-weight: 300;
+        }
+        .rating {
+            margin-top: 10px;
+            i {
+                display: inline-block;
+                color: $color-2;
+                font-size: $main-size;
+            }
+        }
+    }
+}
+
+//--------------------------
+// Testimonial Section End:
+//--------------------------
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+//--------------------------
+// Pricing Setion start:
+//--------------------------
+.pricing {
+    .pricing-plan {
+        box-shadow: $shadow-300;
+        border-radius: 10px;
+        .pricing-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid $black-100;
+            h3 {
+                font-size: 26px;
+                text-align: center;
+                color: $black-900;
+                font-weight: 500;
+                text-transform: capitalize;
+                margin: 0;
+            }
+        }
+        .pricing-price {
+            padding: 40px 30px;
+            display: flex;
+            justify-content: center;
+            line-height: .7;
+            .currency {
+                font-size: $main-size -1;
+                font-weight: 300;
+                color: $black-400;
+                margin-right: 5px;
+                align-self: flex-start;
+            }
+            .price {
+                font-size: 80px;
+                font-weight: bold;
+                color: $main-color;
+            }
+            .period {
+                font-size: $main-size -2;
+                font-weight: 300;
+                color: $black-400;
+                margin-right: 5px;
+                align-self: flex-end;
+            }
+        }
+        .pricing-body {
+            padding: 0px 30px;
+            ul {
+                li {
+                    font-size: $main-size;
+                    font-weight: 300;
+                    color: $black-400;
+                    padding: 10px 0 10px 30px;
+                    border-bottom: 1px solid $black-100;
+                    line-height: 1.7;
+                    position: relative;
+                    &:last-child {
+                        border-bottom: 0
+                    }
+                    i {
+                        color: $main-color;
+                        position: absolute;
+                        top: 18px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .pricing-footer {
+            padding: 20px 30px 30px;
+            text-align: center;
+        }
+    }
+}
+
+//--------------------------
+// Pricing Setion end:
+//--------------------------
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+//--------------------------
+// tean Setion start:
+//--------------------------
+.team {
+    background: $black-100;
+    .team-item {
+        margin: 15px;
+        padding: 30px;
+        box-shadow: $shadow-100;
+        border-radius: 20px;
+        img{
+            width: 300px;
+            height: 350px;
+        }
+        h3 {
+            font-size: $main-size +2;
+            color: $black-900;
+            font-weight: 500;
+            margin: 15px 0 5px;
+            text-transform: capitalize;
+        }
+        span {
+            display: block;
+            font-size: $main-size;
+            font-weight: 300;
+            color: $black-400;
+            text-transform: capitalize;
+        }
+    }
+}
+
+//--------------------------
+// tean Setion end:
+//--------------------------
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//--------------------------
+//frequently section Start :
+//--------------------------
+.faq {
+    .accordion-item:not(last-child) {
+        margin-bottom: 25px;
+    }
+    .accordion-item {
+        .accordion-header:not(.collapsed) {
+            background: $main-color;
+            box-shadow: none;
+            h3 {
+                color: $white-color;
+            }
+            &::before {
+                content: "\f068";
+                color: $white-color;
+            }
+        }
+        .accordion-header {
+            box-shadow: $shadow-100;
+            padding: 20px 50px 20px 30px;
+            transition: all .6s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            h3 {
+                font-size: $main-size + 1;
+                font-weight: 500;
+                color: $black-400;
+                margin: 0;
+                transition: all .6s ease-in-out;
+            }
+            &::before {
+                content: "\f067";
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: $main-size;
+                text-align: center;
+                line-height: 30px;
+                color: $black-400;
+                transition: all .5s ease-in-out;
+            }
+        }
+        .accordion-body {
+            padding: 20px 30px;
+            background: $black-100;
+            p {
+                font-weight: 400;
+                font-size: $main-size;
+                color: $black-400;
+                line-height: 1.9;
+                margin: 0;
+            }
+        }
+    }
+}
+
+//--------------------------
+//frequently section End :
+//--------------------------
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+//--------------------------
+// Contact Section Start:
+//--------------------------
+.contact {
+    background: $black-100;
+    .contact-info {
+        h3 {
+            font-size: $main-size +4;
+            color: $black-900;
+            font-weight: 500;
+            margin: 0 0 40px;
+        }
+        .contact-info-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+            i {
+                position: absolute;
+                left: 0;
+                height: 40px;
+                width: 40px;
+                top: 0;
+                border-radius: 50%;
+                line-height: 40px;
+                font-size: $main-size;
+                color: $main-color;
+                border: 1px solid $main-color;
+                text-align: center;
+            }
+            h4 {
+                font-size: $main-size +2;
+                font-weight: bold;
+                margin: 0 0 10px;
+                color: $black-900;
+            }
+            p {
+                font-size: $main-size;
+                color: $black-400;
+                font-weight: 300;
+                margin: 0;
+                line-height: 1.8;
+            }
+        }
+    }
+    .contact-form {
+        margin-bottom: 25px;
+        textarea.form-control {
+            height: 140px;
+            padding-top: 12px;
+            resize: none
+        }
+        .form-control {
+            height: 52px;
+            border: 10x solid transparent;
+            box-shadow: $shadow-300;
+            border-radius: 20px;
+            padding: 0 24px;
+            color: $black-900;
+            background-color: $black-000;
+            transition: all 0.5s ease-in-out;
+            &:focus {
+                border-color: $main-color;
+            }
+        }
+    }
+}
+
+//--------------------------
+// Contact Section End:
+//--------------------------
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//--------------------------
+// Footer Start:
+//--------------------------
+.footer {
+    background-color: $main-color;
+    padding: 60px 0 0 0;
+    .footer-col {
+        h3 {
+            font-size: 19px;
+            font-weight: 500;
+            color: white;
+            margin: 0 0 25px;
+            text-transform: capitalize
+        }
+        p {
+            font-size: $main-size;
+            color: rgba(255, 255, 255, .7);
+            font-weight: 300;
+            line-height: 1.8;
+            margin: 0;
+        }
+        ul {
+            margin: 0;
+            li:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            li {
+                a {
+                    font-size: $main-size;
+                    color: rgba(255, 255, 255, .7);
+                    font-weight: 300;
+                    display: block;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        padding-left: 15px;
+                        transform: scale(1.1)
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        margin-top: 50px 0 0;
+        margin: 50px 0 0;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 17px;
+        color: rgba(255, 255, 255, .7);
+        border-top: 1px solid white;
+    }
+}
+
+//--------------------------
+// Footer End :
+//--------------------------
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+// ************************************
+//-------------------------------- Media -----------------------------//
+@media(max-width:991px) {
+    .navbar-toggler {
+        background: #ddd;
+        box-shadow: $shadow-300;
+        height: 35px;
+        width: 35px;
+        padding: 2px;
+        font-weight: 500;
+        font-size: 18px;
+        color: gray;
+    }
+    .navbar .container .nav-item .nav-link{
+        color: #545454;
+    }
+    .navbar-nav {
+        background: #ddd;
+        box-shadow: $shadow-300;
+        border-radius: 10px;
+    }
+    .navbar .nav-item {
+        margin: 0;
+        padding: 10px 20px;
+    }
+    .navbar.navbar-shrink .navbar-toggle,
+    .navbar.navbar-shrink .navbar-nav,
+    .navbar.navbar-shrink .nav-item .nav-link {
+        background: $main-color;
+        color: white;
+    }
+    .home .home-img .circle {
+        width: 320px;
+        height: 320px;
+    }
+    .home .home-img .circle::before {
+        transform-origin: 142px 142px;
+        left: 18px;
+        top: 18px;
+    }
+    .home .home-text h2 {
+        font-size: 26px;
+        width: 87%;
+    }
+    .app-download .section-title h2 {
+        margin: 10px 0 50px;
+    }
+    .app-download .app-download-item {
+        margin-bottom: 30px;
+    }
+    .how-it-works .how-it-works-item.line-right::before {
+        content: none;
+    }
+    .how-it-works .how-it-works-item {
+        box-shadow: $shadow-300;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    .footer .footer-col {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-text {
+        margin-bottom: 150px;
+    }
+    .app-download .section-title h2 {
+        margin: 10px 0 50px;
+    }
+    .app-download .app-download-item {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 551px) {
+    .home-text {
+        text-align: center !important;
+    }
+    .fun-facts .section-title h2 {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .fun-facts .fun-facts-text p {
+        text-align: center;
+    }
+    .section-title h2,
+    .section-title h2,
+    .app-download .section-title h2,
+    .section-title h2,
+    .fun-facts .section-title h2,
+    .section-title h2,
+    .home .home-text h2,
+    .section-title h2,
+    .section-title h2 {
+        font-size: 26px;
+    }
+    .footer .footer-col h3 {
+        font-size: 20px;
+    }
+}
+
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+// ???????????????????????????????????
+.toggle-theme {
+    position: fixed;
+    top: 25%;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: rgba(17, 17, 17, 0.864);
+    z-index: 1200;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: $shadow-300;
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $main-color;
+    z-index: 2500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        display: block;
+        width: 80px;
+        height: 80px;
+        transition: all 0.7s ease-in-out;
+        background: $black-400;
+        box-shadow: $shadow-300;
+        border-radius: 50%;
+        animation: zoom_01 1s ease-in-out infinite;
+    }
+}
